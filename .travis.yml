@@ -9,6 +9,9 @@ language: scala
 matrix:
   include:
     - jdk: openjdk8
+      scala: 2.11.12
+    - jdk: openjdk8
+      scala: 2.12.8
 #    - jdk: openjdk11
 
 before_install:
@@ -18,7 +21,7 @@ before_script:
  - export JVM_OPTS="-Dfile.encoding=UTF-8 -Xmx1G -Xms1G -server -XX:ReservedCodeCacheSize=128M"
  - unset _JAVA_OPTIONS
 
-script: sbt scripted
+script: sbt ++$TRAVIS_SCALA_VERSION scripted
 
 cache:
   directories:
