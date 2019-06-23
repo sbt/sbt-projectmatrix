@@ -97,7 +97,7 @@ lazy val core = (projectMatrix in file("core"))
   .settings(
     name := "core"
   )
-  .nativePlatform(scalaVersions = Seq("2.12.8", "2.11.12"))
+  .nativePlatform(scalaVersions = Seq("2.11.12"))
 ```
 
 This will create subprojects `coreJS2_11` and `coreJS2_12`.
