@@ -321,7 +321,7 @@ object ProjectMatrix {
       (rows.find(r => r.isMatch(thatRow)) orElse
         rows.find(r => r.isSecondaryMatch(thatRow))) match {
         case Some(r) => LocalProject(resolveProjectIds(r))
-        case _       => sys.error(s"no rows were found in $id matching $thatRow: $rows")
+        case _       => sys.error(s"no rows were found in $id matching $thatRow:\n${rows.mkString("\n")}")
       }
 
     private def makeSources(dirSuffix: String, svDirSuffix: String): Setting[_] = {
