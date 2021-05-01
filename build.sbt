@@ -1,4 +1,4 @@
-ThisBuild / organization := "com.eed3si9n"
+ThisBuild / organization := "com.github.sbt"
 ThisBuild / dynverSonatypeSnapshots := true
 ThisBuild / version := {
   val orig = (ThisBuild / version).value
