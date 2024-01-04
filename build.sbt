@@ -14,6 +14,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "sbt-projectmatrix",
     pluginCrossBuild / sbtVersion := "1.2.8",
+    scriptedSbt := "1.9.6",
     scalacOptions := Seq("-deprecation", "-unchecked"),
     scriptedLaunchOpts := { scriptedLaunchOpts.value ++
       Seq("-Xmx1024M", "-Dplugin.version=" + version.value)
