@@ -10,8 +10,6 @@ lazy val root = (project in file("."))
 lazy val app = (projectMatrix in file("app"))
   .aggregate(core, intf)
   .dependsOn(core, intf)
-  .aggregate(domain)
-  .dependsOn(domain)
   .settings(
     name := "app"
   )
@@ -34,7 +32,5 @@ lazy val intf = (projectMatrix in file("intf"))
     },
   )
   .jvmPlatform(autoScalaLibrary = false)
-
-lazy val domain = (project in file("domain"))
 
 lazy val core213 = core.jvm(scala213)
