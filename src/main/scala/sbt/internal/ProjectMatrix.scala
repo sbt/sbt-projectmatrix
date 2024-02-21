@@ -249,19 +249,17 @@ object ProjectMatrix {
           case pa: VirtualAxis.PlatformAxis => pa
         }).headOption.getOrElse(sys.error(s"platform axis is missing in $axes"))
         val childId = projectIds(r)
-        val deps = dependencies map { resolveMatrixDependency(_, r) }
-        val aggs = aggregate map {
+        val deps = dependencies.map { resolveMatrixDependency(_, r) } ++ nonMatrixDependencies
+        val aggs = aggregate.map {
           case ref: LocalProjectMatrix =>
             val other = lookupMatrix(ref)
             resolveMatrixAggregate(other, r)
-        }
+        } ++ nonMatrixAggregate
         val dotSbtMatrix = new java.io.File(".sbt") / "matrix"
         IO.createDirectory(dotSbtMatrix)
         val p = Project(childId, dotSbtMatrix / childId)
           .dependsOn(deps: _*)
-          .dependsOn(nonMatrixDependencies: _*)
           .aggregate(aggs: _*)
-          .aggregate(nonMatrixAggregate: _*)
           .setPlugins(plugins)
           .configs(configurations: _*)
           .settings(
