@@ -1,2 +1,3 @@
-@main def main(): Unit =
+object Main extends App {
   println(com.example.Lib.getMessage)
+}
