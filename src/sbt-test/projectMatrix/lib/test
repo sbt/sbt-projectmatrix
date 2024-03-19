@@ -1,0 +1,5 @@
+> strayJar/package
+$ mkdir lib
+$ copy-file strayJar/target/scala-2.12/strayJar_2.12-0.1.0-SNAPSHOT.jar lib/strayJar.jar
+> root2_11/compile
+> ss3/compile
