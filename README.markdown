@@ -13,10 +13,10 @@ setup
 In `project/plugins.sbt`:
 
 ```scala
-addSbtPlugin("com.eed3si9n" % "sbt-projectmatrix" % "0.10.0")
+addSbtPlugin("com.eed3si9n" % "sbt-projectmatrix" % "0.11.0")
 
 // add also the following for Scala.js support
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.10.1")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.19.0")
 ```
 
 usage
