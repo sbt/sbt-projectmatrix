@@ -1,6 +1,8 @@
 sbt-projectmatrix
 =================
 
+**Note**: sbt-projectmatrix has been in-sourced into sbt 2.x. Further enhancements should be done in sbt/sbt.
+
 cross building using subprojects.
 
 This is an experimental plugin that implements better cross building.
